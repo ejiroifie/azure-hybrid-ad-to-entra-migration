@@ -32,16 +32,16 @@ Goal: Demonstrate foundational hybrid identity skills valuable for Azure/Entra I
 
 ### Phase 1: Deploy Mock On-Prem Domain Controller
 
-![VM Overview](./imgs/01-vm-overview.png)  
+![VM Overview](./img/01-vm-overview.png)  
 *Azure Portal: DC01 VM overview (Standard_B2s, Running, East US)*
 
-![AD DS Role Installation](./imgs/02-ad-role-install.png)  
+![AD DS Role Installation](./img/02-ad-role-install.png)  
 *Server Manager: Active Directory Domain Services role installation complete*
 
-![Domain Controller Promotion](./imgs/03-dc-promotion.png)  
+![Domain Controller Promotion](./img/03-dc-promotion.png)  
 *AD DS Configuration Wizard: Promotion in progress (DNS warnings visible)*
 
-![On-Prem Test Objects](./imgs/04-ad-users-group.png)  
+![On-Prem Test Objects](./img/04-ad-users-group.png)  
 *Active Directory Users and Computers: "Migrated Finance Department" group with test users*
 
 ### Phase 2: Install and Configure Microsoft Entra Connect Sync
@@ -51,10 +51,10 @@ Goal: Demonstrate foundational hybrid identity skills valuable for Azure/Entra I
 
 ### Phase 3: Verify Synchronization
 
-![Sync Status Enabled](./imgs/07-sync-status-enabled.png)  
+![Sync Status Enabled](./img/07-sync-status-enabled.png)  
 *Entra admin center: Connect Sync blade – Status Enabled, Password Hash Sync Enabled*
 
-![Synced Users in Entra ID](./imgs/08-synced-users.png)  
+![Synced Users in Entra ID](./img/08-synced-users.png)  
 *Entra ID Users blade: Test users synced (On-premises sync enabled = Yes)*
 
 **Note on Group Membership**  
@@ -66,12 +66,12 @@ This is expected in Entra Connect Sync:
 
 In production, use secondary groups or dynamic membership rules in Entra ID.
 
-![Synced Group – 0 Members](./imgs/bonus-04-group-0-members.png)  
+![Synced Group – 0 Members](./img/bonus-04-group-0-members.png)  
 *Entra ID group properties: Total direct members = 0 (proof of sync + limitation awareness)*
 
 ## Challenges & Lessons Learned
 - **"Management agent already exists" error** during connector creation → resolved by uninstalling and reinstalling Entra Connect Sync (clean config reset).  
-  ![Management Agent Error](./imgs/bonus-ma-error.png)  
+  ![Management Agent Error](./img/bonus-ma-error.png)  
   *Screenshot of the error message in the Entra Connect wizard – common conflict with leftover configurations*
 
 - Credential format issues on AD DS connection page → tested variations (CONTOSO\user, .\user, user@contoso.local).  

@@ -46,7 +46,7 @@ Goal: Demonstrate foundational hybrid identity skills valuable for Azure/Entra I
 
 ### Phase 2: Install and Configure Microsoft Entra Connect Sync
 
-![Configuration Complete](./imgs/06-config-complete.png)  
+![Configuration Complete](./img/06-config-complete.png)  
 *Entra Connect wizard: Configuration succeeded (with standard lab warnings)*
 
 ### Phase 3: Verify Synchronization
